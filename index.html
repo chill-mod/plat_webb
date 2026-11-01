@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plat • Dex</title>
-    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=initTurnstile&render=explicit" async defer></script>
     <style>
         :root {
             --red-main: #ff003c;
@@ -38,71 +37,6 @@
             flex-direction: column;
             align-items: center;
             overflow-x: hidden;
-        }
-
-        /* OVERLAY XÁC MINH TURNSTILE */
-        #turnstile-overlay {
-            position: fixed;
-            inset: 0;
-            background: rgba(3, 4, 6, 0.96);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 10000;
-            backdrop-filter: blur(10px);
-            transition: opacity 0.35s ease, visibility 0.35s ease;
-        }
-        #turnstile-overlay.hidden {
-            opacity: 0;
-            visibility: hidden;
-            pointer-events: none;
-        }
-        .turnstile-box {
-            background: #0d0f15;
-            padding: 35px 26px;
-            border: 2px solid var(--border-metal);
-            border-top: 4px solid var(--red-main);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.95), 0 0 25px rgba(255, 0, 60, 0.3);
-            text-align: center;
-            max-width: 420px;
-            width: 90%;
-            position: relative;
-        }
-        .turnstile-box h2 {
-            font-size: 1.35rem;
-            color: #ffffff;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 8px;
-        }
-        .turnstile-box p {
-            color: var(--text-dim);
-            font-size: 0.88rem;
-            margin-bottom: 22px;
-        }
-        #turnstile-container {
-            display: flex;
-            justify-content: center;
-            min-height: 65px;
-        }
-        .btn-skip-test {
-            margin-top: 20px;
-            background: #161922;
-            border: 1px solid #3b4255;
-            color: #aaa;
-            padding: 9px 20px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-size: 0.75rem;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-        .btn-skip-test:hover {
-            background: var(--red-main);
-            color: #ffffff;
-            border-color: var(--red-main);
-            box-shadow: 0 0 15px var(--red-glow);
         }
 
         /* CONTAINER CHÍNH */
@@ -409,16 +343,6 @@
 </head>
 <body>
 
-    <!-- OVERLAY XÁC MINH TURNSTILE -->
-    <div id="turnstile-overlay">
-        <div class="turnstile-box">
-            <h2>Hệ Thống Xác Minh</h2>
-            <p>Vui lòng xác minh để truy cập hệ thống</p>
-            <div id="turnstile-container"></div>
-            <button class="btn-skip-test" type="button" onclick="unlockPage()">Bỏ Qua Để Xem Trước</button>
-        </div>
-    </div>
-
     <div class="container">
         <!-- HEADER VỎ GIÁP CHỮ NHẬT ĐA TẦNG + KHUNG NEON 7 MÀU -->
         <header>
@@ -431,7 +355,7 @@
                     <span class="mech-bolt bolt-br"></span>
 
                     <h1 class="header-main-title" data-text="PLAT • DEX">PLAT • DEX</h1>
-                    <p class="header-sub-title">Nơi Các Siêu Nhân Ra Đời</p>
+                    <p class="header-sub-title">Tất Cả Để Trong Box Tele Và Discord</p>
                 </div>
             </div>
         </header>
@@ -481,40 +405,5 @@
         </svg>
     </a>
 
-    <!-- CLOUDFLARE TURNSTILE SCRIPT -->
-    <script>
-        function unlockPage() {
-            var overlay = document.getElementById('turnstile-overlay');
-            if (overlay) {
-                overlay.classList.add('hidden');
-            }
-        }
-
-        function initTurnstile() {
-            if (location.protocol === 'file:') {
-                unlockPage();
-                return;
-            }
-            if (window.turnstile) {
-                turnstile.render('#turnstile-container', {
-                    sitekey: '0x4AAAAAAEc9ewrv4yt_-nMA',
-                    theme: 'dark',
-                    callback: function(token) {
-                        unlockPage();
-                    },
-                    'expired-callback': function() {
-                        turnstile.reset('#turnstile-container');
-                    },
-                    'error-callback': function() {
-                        console.warn('Turnstile error');
-                    }
-                });
-            }
-        }
-
-        if (location.protocol === 'file:') {
-            window.addEventListener('DOMContentLoaded', unlockPage);
-        }
-    </script>
 </body>
 </html>

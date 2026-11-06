@@ -3,16 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Chill • Mod - Cộng đồng chia sẻ Telegram chính thức.">
+    <meta name="theme-color" content="#000000">
     <title>Chill • Mod</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>">
     <style>
         :root {
             --red-main: #ff003c;
-            --red-glow: rgba(255, 0, 60, 0.45);
             --bg-void: #000000;
-            --panel-bg: #0b0c10;
-            --border-metal: #2f3545;
             --text-pure: #ffffff;
-            --text-dim: #8e8e93;
         }
 
         * {
@@ -23,10 +22,9 @@
             -webkit-tap-highlight-color: transparent;
         }
 
-        /* NỀN TỐI KHÔNG GIAN CƠ KHÍ */
         body {
             background-color: var(--bg-void);
-            background-image: 
+            background-image:
                 radial-gradient(circle at 50% 18%, rgba(255, 0, 60, 0.08) 0%, transparent 60%),
                 linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
@@ -39,7 +37,6 @@
             overflow-x: hidden;
         }
 
-        /* CONTAINER CHÍNH */
         .container {
             width: 100%;
             max-width: 620px;
@@ -49,11 +46,11 @@
             z-index: 2;
         }
 
-        /* HEADER: KHUNG GIÁP ĐA TẦNG + DẢI LED 7 MÀU */
+        /* ===== HEADER ===== */
         header {
             display: flex;
             justify-content: center;
-            margin-bottom: 35px;
+            margin-bottom: 30px;
             width: 100%;
         }
         .mech-header-outer {
@@ -64,8 +61,8 @@
             background: linear-gradient(90deg, #ff0000, #ff7700, #ffee00, #00ff55, #00e1ff, #0033ff, #8800ff, #ff0000);
             background-size: 200% 100%;
             animation: flowRainbow 3.5s linear infinite;
-            border-radius: 2px;
-            box-shadow: 
+            border-radius: 3px;
+            box-shadow:
                 0 0 25px rgba(255, 0, 60, 0.4),
                 0 15px 35px rgba(0, 0, 0, 0.95);
         }
@@ -75,19 +72,18 @@
             border: 2px solid #363c4e;
             border-top: 2px solid #5a647d;
             border-bottom: 3px solid #050608;
-            padding: 24px 16px 22px 16px;
+            padding: 26px 16px 22px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
-            box-shadow: 
+            box-shadow:
                 inset 0 1px 0 rgba(255, 255, 255, 0.2),
                 inset 0 0 15px rgba(0, 0, 0, 0.9),
                 0 0 0 2px #101217;
         }
 
-        /* ĐINH TÁN CƠ KHÍ 4 GÓC */
         .mech-bolt {
             position: absolute;
             width: 8px;
@@ -107,49 +103,24 @@
             100% { background-position: 200% 50%; }
         }
 
-        /* LOGO TAY CẦM CHƠI GAME */
-        .logo-wrapper {
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-        }
-        .logo-svg {
-            width: clamp(170px, 34vw, 220px);
-            height: auto;
-            filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.95)) drop-shadow(0 0 12px rgba(255, 0, 60, 0.65));
-            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-        .logo-wrapper:hover .logo-svg {
-            transform: scale(1.05) translateY(-2px);
-        }
-
         /* CHỮ CHILL • MOD */
         .header-main-title {
             position: relative;
             display: inline-block;
-            font-size: clamp(1.9rem, 7vw, 2.8rem);
+            font-size: clamp(2.6rem, 10vw, 4rem);
             font-weight: 900;
-            letter-spacing: 4px;
+            letter-spacing: 5px;
             text-transform: uppercase;
-            margin-top: 6px;
             line-height: 1.15;
             text-align: center;
-
             background: linear-gradient(
                 90deg,
-                #ff0000 0%,
-                #ff7700 15%,
-                #ffee00 30%,
-                #00ff55 45%,
-                #00e1ff 60%,
-                #0033ff 75%,
-                #9900ff 90%,
-                #ff0000 100%
+                #ff0000 0%, #ff7700 15%, #ffee00 30%, #00ff55 45%,
+                #00e1ff 60%, #0033ff 75%, #9900ff 90%, #ff0000 100%
             );
             background-size: 200% 100%;
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
             animation: rainbowFlow 3s linear infinite;
         }
@@ -163,13 +134,9 @@
             height: 100%;
             z-index: -1;
             -webkit-text-fill-color: #0e1118;
-            text-shadow: 
-                1px 1px 0 #9ca7bc,
-                2px 2px 0 #7b8599,
-                3px 3px 0 #5c6475,
-                4px 4px 0 #414755,
-                5px 5px 0 #2b2f39,
-                6px 6px 0 #181a20,
+            text-shadow:
+                1px 1px 0 #9ca7bc, 2px 2px 0 #7b8599, 3px 3px 0 #5c6475,
+                4px 4px 0 #414755, 5px 5px 0 #2b2f39, 6px 6px 0 #181a20,
                 7px 7px 12px rgba(0, 0, 0, 0.95),
                 0 0 20px rgba(255, 0, 60, 0.45);
         }
@@ -179,31 +146,11 @@
             100% { background-position: 200% 50%; }
         }
 
-        /* DÒNG CHỮ PHỤ CĂN GIỮA CÂN ĐỐI */
-        .header-sub-title {
-            width: 100%;
-            text-align: center;
-            font-size: clamp(0.7rem, 2.6vw, 0.92rem);
-            font-weight: 900;
-            color: #ff1e4d;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-top: 10px;
-            line-height: 1.45;
-            padding: 0 8px;
-            text-shadow: 
-                1px 1px 0 #990024,
-                2px 2px 0 #5c0016,
-                3px 3px 0 #2e000b,
-                4px 4px 6px rgba(0, 0, 0, 0.9),
-                0 0 12px rgba(255, 0, 60, 0.7);
-        }
-
-        /* BANNER */
+        /* ===== BANNER ===== */
         .banner-list {
             display: flex;
             flex-direction: column;
-            gap: 40px;
+            gap: 30px;
             width: 100%;
         }
         .banner-card {
@@ -213,7 +160,7 @@
             border-top: 3px solid #5d677f;
             border-bottom: 3px solid #050507;
             padding: 14px;
-            box-shadow: 
+            box-shadow:
                 0 0 0 1px #000000,
                 0 0 0 3px #13151c,
                 0 15px 35px rgba(0, 0, 0, 0.95),
@@ -225,7 +172,6 @@
             border-radius: 2px;
         }
         .banner-card-header {
-            position: relative;
             background: linear-gradient(90deg, #22080d 0%, #151722 45%, #0e1017 100%);
             border: 1px solid #3a4154;
             border-left: 5px solid var(--red-main);
@@ -239,7 +185,7 @@
             letter-spacing: 1.5px;
             display: flex;
             align-items: center;
-            box-shadow: 
+            box-shadow:
                 0 3px 8px rgba(0, 0, 0, 0.8),
                 inset 0 1px 0 rgba(255, 255, 255, 0.2),
                 inset 0 -1px 0 rgba(0, 0, 0, 0.7);
@@ -295,12 +241,12 @@
             transform: translateY(-2px);
         }
 
-        /* FOOTER */
+        /* ===== FOOTER ===== */
         footer {
             width: 100%;
             border-top: 1px solid #141418;
-            padding: 30px 15px;
-            margin-top: 50px;
+            padding: 24px 15px 90px;
+            margin-top: 30px;
             text-align: center;
             background: #000000;
         }
@@ -318,13 +264,13 @@
             font-weight: 700;
         }
 
-        /* NÚT TELEGRAM TRÒN */
+        /* ===== NÚT TELEGRAM TRÒN ===== */
         .telegram-btn {
             position: fixed;
-            bottom: 25px;
-            right: 25px;
-            width: 58px;
-            height: 58px;
+            bottom: 20px;
+            right: 20px;
+            width: 56px;
+            height: 56px;
             background: linear-gradient(135deg, #0088cc, #0055ff);
             border-radius: 50%;
             display: flex;
@@ -340,63 +286,52 @@
             box-shadow: 0 0 25px rgba(0, 136, 204, 1);
         }
         .telegram-btn svg {
-            width: 30px;
-            height: 30px;
+            width: 28px;
+            height: 28px;
             fill: #ffffff;
             margin-right: 2px;
+        }
+
+        /* ===== RESPONSIVE MOBILE NHỎ ===== */
+        @media (max-width: 400px) {
+            .container { padding: 18px 12px; }
+            .mech-header-armor { padding: 20px 12px 18px; }
+            .banner-card { padding: 10px; }
+            .btn-action-view { padding: 11px 14px; font-size: 0.92rem; letter-spacing: 1.5px; }
+            .telegram-btn { width: 50px; height: 50px; bottom: 16px; right: 16px; }
+            .telegram-btn svg { width: 24px; height: 24px; }
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- HEADER VỎ GIÁP CHỮ NHẬT ĐA TẦNG + KHUNG NEON 7 MÀU -->
         <header>
             <div class="mech-header-outer">
                 <div class="mech-header-armor">
-                    <!-- 4 Đinh tán vỏ giáp -->
                     <span class="mech-bolt bolt-tl"></span>
                     <span class="mech-bolt bolt-tr"></span>
                     <span class="mech-bolt bolt-bl"></span>
                     <span class="mech-bolt bolt-br"></span>
 
                     <h1 class="header-main-title" data-text="CHILL • MOD">CHILL • MOD</h1>
-                    <p class="header-sub-title">Mọi Thứ Đều Trong Group Telegram Và Discord</p>
                 </div>
             </div>
         </header>
 
-        <!-- DANH SÁCH BANNER -->
         <main class="banner-list">
-            <!-- Banner 1: Telegram Chill•Mod -->
             <div class="banner-card">
-                <div class="banner-card-header">
-                    01. Telegram Chill•Mod
-                </div>
+                <div class="banner-card-header">01. Telegram Chill•Mod</div>
                 <a href="https://plat-dexx.github.io/plat-unlock/" class="banner-view-box" target="_blank" rel="noopener noreferrer">
-                    <img src="ANH1.PNG" alt="Telegram Chill•Mod">
+                    <img src="ANH1.PNG" alt="Telegram Chill•Mod" loading="lazy">
                 </a>
                 <div class="banner-footer-btn">
                     <a href="https://t.me/chillmod_shareios" class="btn-action-view" target="_blank" rel="noopener noreferrer">Tham Gia Ngay</a>
                 </div>
             </div>
-
-            <!-- Banner 2: Discord Chill•Mod -->
-            <div class="banner-card">
-                <div class="banner-card-header">
-                    02. Discord Chill•Mod
-                </div>
-                <a href="https://t.me/share_ioss" class="bin-view-box banner-view-box" target="_blank" rel="noopener noreferrer">
-                    <img src="ANH2.PNG" alt="Discord Chill•Mod">
-                </a>
-                <div class="banner-footer-btn">
-                    <a href="https://discord.gg/UHb4BM626F" class="btn-action-view" target="_blank" rel="noopener noreferrer">Tham Gia Ngay</a>
-                </div>
-            </div>
         </main>
     </div>
 
-    <!-- FOOTER -->
     <footer>
         <div class="footer-content">
             <h4>Bản Quyền Thuộc Về</h4>
@@ -404,7 +339,6 @@
         </div>
     </footer>
 
-    <!-- NÚT TELEGRAM TRÒN -->
     <a href="https://t.me/plat_dex" class="telegram-btn" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
         <svg viewBox="0 0 24 24">
             <path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.56 8.16l-2.01 9.48c-.15.68-.55.84-1.12.52l-3.1-2.28-1.5 1.44c-.17.17-.31.31-.63.31l.22-3.17 5.77-5.21c.25-.22-.05-.34-.39-.12l-7.13 4.49-3.07-.96c-.67-.21-.68-.67.14-.99l12.01-4.63c.56-.21 1.05.13.83.92z"/>

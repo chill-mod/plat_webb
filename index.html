@@ -190,6 +190,7 @@
                 inset 0 1px 0 rgba(255, 255, 255, 0.2),
                 inset 0 -1px 0 rgba(0, 0, 0, 0.7);
         }
+        /* Ảnh banner giờ là div tĩnh, không còn là link */
         .banner-view-box {
             width: 100%;
             aspect-ratio: 16 / 9;
@@ -199,6 +200,7 @@
             position: relative;
             border: 2px solid #232733;
             box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.9);
+            cursor: default;
         }
         .banner-view-box img {
             width: 100%;
@@ -206,6 +208,9 @@
             object-fit: cover;
             display: block;
             transition: transform 0.4s ease, filter 0.4s ease;
+            pointer-events: none;
+            user-select: none;
+            -webkit-user-drag: none;
         }
         .banner-card:hover .banner-view-box img {
             transform: scale(1.03);
@@ -321,10 +326,10 @@
 
         <main class="banner-list">
             <div class="banner-card">
-                <div class="banner-card-header">1. Tải File Ở Đây</div>
-                <a href="https://chill-mod.github.io/unlock/" class="banner-view-box" target="_blank" rel="noopener noreferrer">
-                    <img src="A2.PNG" alt="Tải File Ở Đây" loading="lazy">
-                </a>
+                <div class="banner-card-header">⚠️ Tải File Ở Đây ⚠️</div>
+                <div class="banner-view-box">
+                    <img src="ANH.PNG" alt="Tải File Ở Đây" loading="lazy">
+                </div>
                 <div class="banner-footer-btn">
                     <a href="https://chill-mod.github.io/unlock/" class="btn-action-view" target="_blank" rel="noopener noreferrer">Xem Ngay</a>
                 </div>
